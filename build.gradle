@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+
+repositories {
+    jcenter()
+}
+
+configurations {
+    provided
+}
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
+}
+idea {
+    module {
+        scopes.PROVIDED.plus += [configurations.provided]
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.7'
+    provided 'org.eclipse.persistence:javax.persistence:2.1.0'
+
+
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.h2database:h2:1.4.190'
+    testCompile 'org.hibernate:hibernate-entitymanager:5.0.2.Final'
+    testCompile 'org.hibernate:hibernate-core:5.0.2.Final'
+
+}
+
