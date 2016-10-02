@@ -1,4 +1,7 @@
-package code.core.domain.page;
+package code.core.domain.page.jpa;
+
+import code.core.domain.page.Direction;
+import code.core.domain.page.SortOrder;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Order;

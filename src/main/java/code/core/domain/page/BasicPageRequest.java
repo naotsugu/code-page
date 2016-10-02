@@ -64,20 +64,17 @@ public class BasicPageRequest<T> implements PageRequest<T> {
 
     @Override
     public PageRequest next() {
-        if (getNumber() == Integer.MAX_VALUE) {
-            return this;
-        }
-        return new BasicPageRequest(getNumber() + 1, getSize(), getSort());
+        return getNumber() == Integer.MAX_VALUE
+            ? this
+            : new BasicPageRequest(getNumber() + 1, getSize(), getSort());
     }
 
 
     @Override
     public PageRequest previous() {
-        if (getNumber() == 0) {
-            return this;
-        }
-
-        return new BasicPageRequest(getNumber() - 1, getSize(), getSort());
+        return getNumber() == 0
+            ? this
+            : new BasicPageRequest(getNumber() - 1, getSize(), getSort());
     }
 
 

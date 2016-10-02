@@ -2,11 +2,15 @@ package code.core.domain.page;
 
 public interface PageRequests {
 
-    int DEFAULT_PAGE_SIZE = 10;
+    int DEFAULT_PAGE_SIZE = 100;
 
 
     static PageRequest of() {
         return new BasicPageRequest(0, DEFAULT_PAGE_SIZE, new BasicSort<>(null));
+    }
+
+    static PageRequest of(int size) {
+        return new BasicPageRequest(0, size, new BasicSort<>(null));
     }
 
     static PageRequest of(Sort sort) {

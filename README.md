@@ -20,7 +20,7 @@ Run query, Get page.
 Page<Customer> page = new BasicPage<>(findAll(pageRequest), pageRequest, countAll());
 ```
 
-The following code is Query method example.
+The following code is query method example.
 
 ```java
 private List<Customer> findAll(PageRequest<String> pageRequest) {

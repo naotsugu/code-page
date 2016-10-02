@@ -27,8 +27,6 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.7'
     provided 'org.eclipse.persistence:javax.persistence:2.1.0'
 
-
-
     testCompile 'junit:junit:4.12'
     testCompile 'com.h2database:h2:1.4.190'
     testCompile 'org.hibernate:hibernate-entitymanager:5.0.2.Final'

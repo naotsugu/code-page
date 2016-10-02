@@ -31,7 +31,7 @@ public class BasicSlice<E> implements Slice<E> {
         this.pageable = Objects.requireNonNull(pageable);
         content = (content == null) ? new ArrayList<>() : content;
         this.hasNext = content.size() > this.pageable.getSize();
-        this.content = (this.hasNext) ?  content.subList(0, this.pageable.getSize()): content;
+        this.content = (this.hasNext) ? content.subList(0, this.pageable.getSize()) : content;
 
     }
 

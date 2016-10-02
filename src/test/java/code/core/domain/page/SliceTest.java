@@ -48,7 +48,7 @@ public class SliceTest {
 
         new BasicSlice<>(
                 Arrays.asList("1,2,3,4,5,6,7,8,9,A,B".split(",")),
-                PageRequests.of(),
+                PageRequests.of(10),
                 false);
 
     }
@@ -58,7 +58,7 @@ public class SliceTest {
 
         Slice<String> slice = new BasicSlice<>(
                 Arrays.asList("1,2,3,4,5,6,7,8,9,A,B".split(",")),
-                PageRequests.of());
+                PageRequests.of(10));
 
         assertThat(slice.getNumberOfElements(), is(10));
         assertThat(slice.getContent().size(), is(10));
@@ -70,9 +70,9 @@ public class SliceTest {
     @Test
     public void testEquals() throws Exception {
 
-        Slice<String> slice1 = new BasicSlice<>(Arrays.asList("1,2,3".split(",")), PageRequests.of());
-        Slice<String> slice2 = new BasicSlice<>(Arrays.asList("1,2,3".split(",")), PageRequests.of());
-        Slice<String> slice3 = new BasicSlice<>(Arrays.asList("1,2,X".split(",")), PageRequests.of());
+        Slice<String> slice1 = new BasicSlice<>(Arrays.asList("1,2,3".split(",")), PageRequests.of(10));
+        Slice<String> slice2 = new BasicSlice<>(Arrays.asList("1,2,3".split(",")), PageRequests.of(10));
+        Slice<String> slice3 = new BasicSlice<>(Arrays.asList("1,2,X".split(",")), PageRequests.of(10));
 
         assertThat(slice1.equals(slice2), is(true));
         assertThat(slice1.equals(slice3), is(false));

@@ -26,9 +26,9 @@ public class BasicPage<E> implements Page<E> {
 
     @Override
     public int getTotalPages() {
-        return getSize() == 0 ?
-                1 :
-                (int) Math.ceil((double) totalElements / (double) getSize());
+        return getSize() == 0
+                ? 1
+                : (int) Math.ceil((double) totalElements / (double) getSize());
     }
 
 
